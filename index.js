@@ -47,7 +47,7 @@ submissionStream.on('item', async (post) => {
 		let clipName = await findTwitchClip(twitchClipUrl[1]);
 		if (clipName) {
 			console.log(`Clip for ${post.id} found, downloading ${clipName}`);
-			saveTwitchClip(clipName, post);
+			saveTwitchClip(twitchClipUrl[1], clipName, post);
 		} else {
 			console.log(`Clip for ${post.id} not found, it might have been removed from Twitch.`);
 		}
